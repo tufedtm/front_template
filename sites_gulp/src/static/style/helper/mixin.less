@@ -1,0 +1,78 @@
+/*
+ * set centered container
+ */
+.container(@width: 1120px){
+  max-width: @width + 10px;
+  margin: 0 auto;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
+/*
+ * set element size
+ */
+.size(@width, @height: @width){
+  width: @width;
+  height: @height;
+}
+
+
+/*
+ * set margin on left & right
+ */
+.margin-x(@margin-left, @margin-right: @margin-left){
+  margin-left: @margin-left;
+  margin-right: @margin-right;
+}
+
+
+/*
+ * set margin on top & bottom
+ */
+.margin-y(@margin-top, @margin-bottom: @margin-top){
+  margin-top: @margin-top;
+  margin-bottom: @margin-bottom;
+}
+
+
+/*
+ * set pading on left & right
+ */
+.padding-x(@padding-left, @padding-right: @padding-left){
+  padding-left: @padding-left;
+  padding-right: @padding-right;
+}
+
+
+/*
+ * set padding on top & bottom
+ */
+.padding-y(@padding-top, @padding-bottom: @padding-top){
+  padding-top: @padding-top;
+  padding-bottom: @padding-bottom;
+}
+
+
+/*
+ * set triangle from pseudo-element
+ */
+
+.css-triangle(@triangle-color, @triangle-width, @triangle-height: @triangle-width) {
+  content: '';
+  display: block;
+  border-style: inset;
+  border-width: @triangle-height @triangle-width;
+}
+
+.css-triangle-left(@triangle-color, @triangle-width, @triangle-height: @triangle-width) {
+  .css-triangle(@triangle-color, @triangle-width, @triangle-height: @triangle-width);
+  border-color: transparent @triangle-color transparent transparent;
+  border-right-style: solid;
+}
+
+.css-triangle-right(@triangle-color, @triangle-width, @triangle-height: @triangle-width) {
+  .css-triangle(@triangle-color, @triangle-width, @triangle-height);
+  border-color: transparent transparent transparent @triangle-color;
+  border-left-style: solid;
+}

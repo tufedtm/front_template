@@ -1,0 +1,68 @@
+.wrap {
+  .container();
+}
+
+a {
+  &:hover {
+    color: @active-color-font;
+  }
+}
+
+/*
+ * buttons
+ * start
+ */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 77px;
+  height: 28px;
+
+  font-size: 14px;
+  color: #2b3033;
+
+  border: 1px solid @active-color;
+  background-color: transparent;
+}
+
+/*
+ * buttons
+ * end
+ */
+
+/*
+ * form
+ * start
+ */
+
+label {
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+
+  border: #bbbbbb solid 1px;
+  resize: vertical;
+}
+
+.input {
+  width: 100%;
+  padding: 15px;
+
+  background-color: #fff;
+  border: 1px solid #e1e0e0;
+
+  &:invalid {
+    border-color: #fa6565;
+  }
+}
+
+/*
+ * form
+ * end
+ */
