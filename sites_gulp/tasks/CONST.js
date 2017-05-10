@@ -1,3 +1,5 @@
+'use strict';
+
 const SRC_DIR = {
   dest: 'dist',
 
@@ -7,8 +9,9 @@ const SRC_DIR = {
   script_src: 'src/static/js/*.js',
   style_src: 'src/static/style/app.less',
   style_watch: 'src/static/style/**/*.less',
-  template_src: 'src/*.html',
-  template_watch: 'src/**/*.html',
+  template_src: 'src/*.twig',
+  template_watch: 'src/**/*.twig',
 };
 
-module.exports = SRC_DIR;
+
+export default SRC_DIR;

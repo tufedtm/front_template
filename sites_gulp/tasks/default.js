@@ -1,9 +1,10 @@
 'use strict';
 
-import gulp from 'gulp'
-import runSequence from 'run-sequence'
+import gulp from "gulp";
+import runSequence from "run-sequence";
 
-gulp.task('default', function () {
+
+gulp.task('default', () => {
   runSequence(
     'clear',
     ['template', 'style', 'script', 'static'],
@@ -11,7 +12,8 @@ gulp.task('default', function () {
   );
 });
 
-gulp.task('build', function () {
+
+gulp.task('build', () => {
   runSequence(
     'clear',
     ['template', 'style', 'script', 'static']

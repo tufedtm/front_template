@@ -1,20 +1,23 @@
 'use strict';
 
-import gulp from 'gulp'
-import sourcemaps from 'gulp-sourcemaps'
-import babel from 'gulp-babel';
-// import {get as bsGet} from 'browser-sync';
-import SRC_DIR from './CONST'
+import gulp from "gulp";
+import babel from "gulp-babel";
+import concat from "gulp-concat";
+import sourcemaps from "gulp-sourcemaps";
+import uglify from "gulp-uglify";
+import SRC_DIR from "./CONST";
+import browserSync from "./serve";
 
-// const browserSync = bsGet('server');
 
-gulp.task('script', function () {
+gulp.task('script', () => {
   return gulp.src(SRC_DIR.script_src)
     .pipe(sourcemaps.init())
+    .pipe(concat('app.js'))
     .pipe(babel({
       presets: ['es2015']
     }))
+    .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(SRC_DIR.dest + '/static/js/'));
-    // .pipe(browserSync.stream({match: "**/*.js"}));
+    .pipe(gulp.dest(SRC_DIR.dest + '/static/js/'))
+    .pipe(browserSync.stream({match: "**/*.js"}))
 });
