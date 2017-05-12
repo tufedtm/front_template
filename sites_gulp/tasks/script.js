@@ -13,9 +13,7 @@ gulp.task('script', () => {
   return gulp.src(SRC_DIR.script_src)
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
-    .pipe(babel({
-      presets: ['es2015']
-    }))
+    .pipe(babel())
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(SRC_DIR.dest + '/static/js/'))
