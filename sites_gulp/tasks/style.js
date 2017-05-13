@@ -17,7 +17,9 @@ gulp.task('style', () =>
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(postcss([
-      require('autoprefixer')
+      require('autoprefixer')({
+        cascade: false
+      })
     ]))
     .pipe(csso({
       comments: false

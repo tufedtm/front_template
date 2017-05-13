@@ -4,6 +4,9 @@
       "env"
     ]
   },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "devDependencies": {
     "autoprefixer": "^7.0.1",
     "babel-cli": "^6.24.1",
