@@ -7,12 +7,12 @@ import SRC_DIR from "./CONST";
 import browserSync from "./serve";
 
 
-gulp.task('template', () => {
-  return gulp.src([SRC_DIR.template_src, '!src/base.twig'])
+gulp.task('template', () =>
+  gulp.src([SRC_DIR.template_src, '!src/base.twig'])
     .pipe(rename({
       extname: '.html'
     }))
     .pipe(nunjucks.compile())
     .pipe(gulp.dest(SRC_DIR.dest))
     .pipe(browserSync.stream())
-});
+);

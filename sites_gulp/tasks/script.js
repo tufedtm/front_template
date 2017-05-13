@@ -9,8 +9,8 @@ import SRC_DIR from "./CONST";
 import browserSync from "./serve";
 
 
-gulp.task('script', () => {
-  return gulp.src(SRC_DIR.script_src)
+gulp.task('script', () =>
+  gulp.src(SRC_DIR.script_src)
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
     .pipe(babel())
@@ -18,4 +18,4 @@ gulp.task('script', () => {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(SRC_DIR.dest + '/static/js/'))
     .pipe(browserSync.stream({match: "**/*.js"}))
-});
+);

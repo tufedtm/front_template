@@ -9,8 +9,8 @@ import SRC_DIR from "./CONST";
 import browserSync from "./serve";
 
 
-gulp.task('style', () => {
-  return gulp.src(SRC_DIR.style_src)
+gulp.task('style', () =>
+  gulp.src(SRC_DIR.style_src)
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(postcss([
@@ -22,4 +22,4 @@ gulp.task('style', () => {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(SRC_DIR.dest + '/static/css/'))
     .pipe(browserSync.stream({match: '**/*.css'}))
-});
+);

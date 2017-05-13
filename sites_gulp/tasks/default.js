@@ -7,7 +7,7 @@ import runSequence from "run-sequence";
 gulp.task('default', () => {
   runSequence(
     'clear',
-    ['template', 'style', 'script', 'static'],
+    ['template', 'image', 'style', 'script', 'static'],
     ['serve', 'watch']
   );
 });
@@ -16,6 +16,6 @@ gulp.task('default', () => {
 gulp.task('build', () => {
   runSequence(
     'clear',
-    ['template', 'style', 'script', 'static']
+    ['template', 'image', 'style', 'script', 'static'],
   );
 });
