@@ -19,3 +19,10 @@ gulp.task('build', () => {
     ['template', 'image', 'style', 'script', 'static'],
   );
 });
+
+
+gulp.task('prod', () => {
+  global.isProd = true;
+
+  gulp.start('build');
+});

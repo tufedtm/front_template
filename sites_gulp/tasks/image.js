@@ -2,11 +2,11 @@
 
 import gulp from "gulp";
 import imagemin from "gulp-imagemin";
-import SRC_DIR from "./CONST";
+import PATHS from "./CONST";
 
 
 gulp.task('image', () =>
-  gulp.src(SRC_DIR.static_img)
+  gulp.src(PATHS.image.src)
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({arithmetic: true, progressive: true}),
@@ -25,5 +25,5 @@ gulp.task('image', () =>
         ]
       })
     ]))
-    .pipe(gulp.dest(SRC_DIR.dest + '/static/img/'))
+    .pipe(gulp.dest(PATHS.image.dst))
 );

@@ -1,13 +1,13 @@
 'use strict';
 
 import gulp from "gulp";
-import SRC_DIR from "./CONST";
+import PATHS from "./CONST";
 import browserSync from "./serve";
 
 
 gulp.task('watch', () => {
-  gulp.watch(SRC_DIR.static_img, ['image', browserSync.reload]);
-  gulp.watch(SRC_DIR.style_watch, ['style']);
-  gulp.watch(SRC_DIR.script_src, ['script']);
-  gulp.watch(SRC_DIR.template_watch, ['template']);
+  gulp.watch(PATHS.image.watch, ['image', browserSync.reload]);
+  gulp.watch(PATHS.style.watch, ['style']);
+  gulp.watch(PATHS.script.watch, ['script']);
+  gulp.watch(PATHS.template.watch, ['template']);
 });

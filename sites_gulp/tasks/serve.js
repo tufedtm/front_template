@@ -2,7 +2,7 @@
 
 import {create} from "browser-sync";
 import gulp from "gulp";
-import SRC_DIR from "./CONST";
+import PATHS from "./CONST";
 
 
 const browserSync = create('server');
@@ -10,9 +10,8 @@ const browserSync = create('server');
 
 gulp.task('serve', () => {
   browserSync.init({
-    server: {
-      baseDir: SRC_DIR.dest
-    },
+    notify: false,
+    server: PATHS.dst,
   });
 });
 

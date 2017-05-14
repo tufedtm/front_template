@@ -2,10 +2,11 @@
 
 import gulp from "gulp";
 import ghPages from "gulp-gh-pages";
+import PATHS from "./CONST";
 
 
 gulp.task('gh_pages:src', () =>
-  gulp.src('./dist/**/*')
+  gulp.src(PATHS.ghPages)
     .pipe(ghPages())
 );
 

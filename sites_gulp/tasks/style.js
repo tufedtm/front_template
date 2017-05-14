@@ -2,19 +2,20 @@
 
 import gulp from "gulp";
 import csso from "gulp-csso";
+import gulpIf from "gulp-if";
 import less from "gulp-less";
 import notify from "gulp-notify";
 import plumber from "gulp-plumber";
 import postcss from "gulp-postcss";
 import sourcemaps from "gulp-sourcemaps";
-import SRC_DIR from "./CONST";
+import PATHS from "./CONST";
 import browserSync from "./serve";
 
 
 gulp.task('style', () =>
-  gulp.src(SRC_DIR.style_src)
+  gulp.src(PATHS.style.src)
     .pipe(plumber({errorHandler: notify.onError(error => error.message)}))
-    .pipe(sourcemaps.init())
+    .pipe(gulpIf(!global.isProd, sourcemaps.init()))
     .pipe(less())
     .pipe(postcss([
       require('autoprefixer')({
@@ -24,7 +25,7 @@ gulp.task('style', () =>
     .pipe(csso({
       comments: false
     }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(SRC_DIR.dest + '/static/css/'))
+    .pipe(gulpIf(!global.isProd, sourcemaps.write('.')))
+    .pipe(gulp.dest(PATHS.style.dst))
     .pipe(browserSync.stream({match: '**/*.css'}))
 );
