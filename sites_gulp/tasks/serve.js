@@ -11,6 +11,7 @@ const browserSync = create('server');
 gulp.task('serve', () => {
   browserSync.init({
     notify: false,
+    reloadOnRestart: true,
     server: PATHS.dst,
   });
 });
