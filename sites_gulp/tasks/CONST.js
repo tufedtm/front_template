@@ -33,8 +33,8 @@ export default {
   },
 
   template: {
-    src: 'src/*.html',
+    src: 'src/*.twig',
     dst: 'dist',
-    watch: 'src/**/*.html'
+    watch: 'src/**/*.twig'
   },
 };
